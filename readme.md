@@ -8,8 +8,7 @@ This tool is perfect for data-munging, log analysis, and learning how shell pipe
 
 ## **Features**
 
-* **100% Browser-Based:** A single HTML file. No server, no installation, and no data ever leaves your computer.  
-* **Multiple Data Inputs:**  
+ * **Multiple Data Inputs:**  
   * **Excel Importer:** Load .xlsx or .xls files directly.  
   * **Sheet Selection:** Choose which sheet to import from your Excel workbook.  
   * **CSV Importer:** Loads .csv files.  
@@ -38,18 +37,16 @@ This tool is perfect for data-munging, log analysis, and learning how shell pipe
 
 ## **How to Use**
 
-1. **Download:** Get the visual\_shell.html file.  
-2. **Open:** Double-click the file to open it in any modern web browser.  
-3. **Load Your Data:**  
+1. **Load Your Data:**  
    * **Option A (Upload):** Use the "Load Data" section to upload an Excel or CSV file. If it's Excel, select the sheet you want to load.  
    * **Option B (Paste):** Paste your sample data (CSV, log file, etc.) directly into the "1. Input Data" text box.  
-4. **Build Your Pipeline:**  
+2. **Build Your Pipeline:**  
    * Go to the "2. Pipeline Steps" section.  
    * Select a tool (e.g., cut) from the dropdown and click "Add Step."  
    * A new card will appear. Configure its options (e.g., for cut, set the Delimiter to , and Fields to 1,3).  
-5. **Watch the Live Preview:**  
+3. **Watch the Live Preview:**  
    * As you add and change steps, the "3. Live Preview" box on the right will instantly update to show you the result of your *entire* pipeline.  
-6. **Get Your Command:**  
+4. **Get Your Command:**  
    * Look at the "4. Generated Shell Command" box at the bottom.  
    * Uncheck "Format for readability" to see the final single-line command.  
    * Click "Copy" and paste this command into your terminal.  
