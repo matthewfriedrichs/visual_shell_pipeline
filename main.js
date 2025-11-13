@@ -7,6 +7,26 @@ import { handleFileLoad, loadSheet } from './modules/importer.js';
 // --- STATE ---
 let pipelineSteps = [];
 
+// --- NEW: DUMMY DATA SAMPLES ---
+const CSV_SAMPLE_DATA = `ID,FirstName,LastName,Email,Department,Salary
+101,John,Doe,john.doe@example.com,Engineering,90000
+102,Jane,Smith,jane.smith@example.com,Marketing,85000
+103,Jim,Brown,jim.brown@example.com,Engineering,92000
+104,Sarah,Wilson,sarah.wilson@example.com,Sales,78000
+105,Mike,Johnson,mike.johnson@example.com,Marketing,82000
+106,Emily,Davis,emily.davis@example.com,Sales,80000
+107,Chris,Lee,chris.lee@example.com,Engineering,95000
+108,Anna,Taylor,anna.taylor@example.com,Support,72000`;
+
+const LOG_SAMPLE_DATA = `555.168.1.1 - - [10/Nov/2025:10:30:01 +0000] "GET /index.html HTTP/1.1" 200 4567
+555.168.1.2 - - [10/Nov/2025:10:30:05 +0000] "GET /styles.css HTTP/1.1" 200 1234
+555.168.1.1 - - [10/Nov/2025:10:30:06 +0000] "POST /api/login HTTP/1.1" 401 300
+555.168.1.3 - - [10/Nov/2025:10:31:10 +0000] "GET /products/widget HTTP/1.1" 200 5678
+555.168.1.2 - - [10/Nov/2025:10:31:12 +0000] "GET /images/logo.png HTTP/1.1" 200 2450
+555.168.1.1 - - [10/Nov/2025:10:31:15 +0000] "POST /api/login HTTP/1.1" 401 300
+555.168.1.4 - - [10/Nov/2025:10:32:00 +0000] "GET /admin HTTP/1.1" 403 150
+555.168.1.3 - - [10/Nov/2025:10:32:02 +0000] "GET /favicon.ico HTTP/1.1" 404 150`;
+
 // --- ELEMENT SELECTORS ---
 const inputDataEl = document.getElementById('input-data');
 const livePreviewEl = document.getElementById('live-preview');
@@ -25,6 +45,10 @@ const fileUploaderEl = document.getElementById('file-uploader');
 const sheetSelectorContainerEl = document.getElementById('sheet-selector-container');
 const sheetSelectorEl = document.getElementById('sheet-selector');
 const loadSheetBtnEl = document.getElementById('load-sheet-btn');
+
+// NEW: Sample Data Buttons
+const loadCsvSampleBtn = document.getElementById('load-csv-sample');
+const loadLogSampleBtn = document.getElementById('load-log-sample');
 
 // NEW: Theme Toggle Elements
 const themeToggleBtn = document.getElementById('theme-toggle');
@@ -281,6 +305,23 @@ fileUploaderEl.addEventListener('change', (e) => {
 });
 loadSheetBtnEl.addEventListener('click', () => {
     loadSheet(inputDataEl, sheetSelectorEl, updateOutput);
+});
+
+// NEW: Sample Data Listeners
+loadCsvSampleBtn.addEventListener('click', () => {
+    inputDataEl.value = CSV_SAMPLE_DATA;
+    // Reset file input and hide sheet selector, just like in handleFileLoad
+    fileUploaderEl.value = null;
+    sheetSelectorContainerEl.classList.add('hidden');
+    updateOutput();
+});
+
+loadLogSampleBtn.addEventListener('click', () => {
+    inputDataEl.value = LOG_SAMPLE_DATA;
+    // Reset file input and hide sheet selector
+    fileUploaderEl.value = null;
+    sheetSelectorContainerEl.classList.add('hidden');
+    updateOutput();
 });
 
 // NEW: Theme Toggle Listener
