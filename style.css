@@ -1,0 +1,45 @@
+/* Custom styles for generated command box */
+#generated-command-box {
+    background-color: #0f172a;
+    /* slate-900 */
+    color: #e2e8f0;
+    /* slate-200 */
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Style for pipeline steps */
+.step-card {
+    background-color: #ffffff;
+    /* White card */
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* UPDATED: Added dark mode style for step cards */
+.dark .step-card {
+    background-color: #1e293b;
+    /* slate-800 */
+}
+
+/* Custom styles for select inputs to look consistent */
+.form-select {
+    /* UPDATED: Light mode arrow color */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* UPDATED: Added dark mode style for the select arrow */
+.dark .form-select {
+    /* A lighter arrow color for dark backgrounds */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+}
