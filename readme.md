@@ -4,6 +4,8 @@ Visual Shell Pipeline is a "no-code" browser-based tool for building, previewing
 
 This tool is perfect for data-munging, log analysis, and learning how shell pipelines work without the risk of modifying your original files.
 
+[Try it out now on GitHub Pages!](https://matthewfriedrichs.github.io/visual_shell_pipeline/)
+
 ## **Features**
 
 * **100% Browser-Based:** A single HTML file. No server, no installation, and no data ever leaves your computer.  
